@@ -17,10 +17,7 @@ import {
 function App() {
   return (
     <div className="App">
-      {/* <h1>Let's build the TINDER CLONE App 🚀  </h1> */}
-      
       <Router>
-        
         <Switch>
         <Route path="/chats/:person">
             <Header backButton="/chats" />
@@ -36,11 +33,6 @@ function App() {
             <SwipeButtons />
           </Route>
         </Switch>
-        {/* Tinder Cards */}
-        {/* Buttons below tinder cards */}
-
-        {/* Chats screen */}
-        {/* Individual chat screen */}
       </Router>
     </div>
   );

@@ -4,7 +4,6 @@ import Avator from "@material-ui/core/Avatar";
 import "./Chat.css";
 import { Link } from 'react-router-dom';
 
-/* This is a chat component */
 const Chat = ({name, message, profilePic, timestamp}) => {
     return (
         <Link to={`/chats/${name}`}>

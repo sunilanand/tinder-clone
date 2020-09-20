@@ -10,7 +10,6 @@ import './Header.css';
 function Header({ backButton }) {
     const history = useHistory();
     return (
-        // BEM
         <div className="header">
             {
                 backButton? (
@@ -23,7 +22,6 @@ function Header({ backButton }) {
                     </IconButton>
                 )
             }
-            
             
             <Link to="/">
                 <img 

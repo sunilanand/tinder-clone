@@ -66,3 +66,17 @@ This section has moved here: https://facebook.github.io/create-react-app/docs/de
 ### `yarn build` fails to minify
 
 This section has moved here: https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify
+
+
+## Sunil's data:
+DB:
+https://cloud.mongodb.com/
+
+Backend Hosting:
+https://dashboard.heroku.com/
+
+Frontend Hosting:
+https://console.firebase.google.com/u/0/
+
+Final output:
+https://tinder-clone-mern-a3065.web.app/
