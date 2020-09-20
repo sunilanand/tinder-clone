@@ -1,6 +1,7 @@
 import React, {useState, useEffect} from 'react';
 import TinderCard from 'react-tinder-card';
-import database from './firebase';
+import axios from './axios';
+// import database from './firebase';
 
 import './TinderCards.css';
 
@@ -18,20 +19,23 @@ function TinderCards() {
 
     // Piece of code which runs based on a condition
     useEffect(() => {
-        // effect
-        
-        const  unsubscribe = database.collection('people').onSnapshot(snapshot => (
-            setPeople(snapshot.docs.map(doc => doc.data()))
-        ));
+        async function fetchData() {
+            const req = await axios.get('/tinder/cards');
 
-        return () => {
-            unsubscribe();
+            setPeople(req.data);
         }
-
+        fetchData();
     }, []);//people: This is where the watcher is added, e.g. if people is added to watcher then when ever people variable change, the code executes.
 
+    const swiped = (direction, nameToDelete) => {
+        console.log("removing:",nameToDelete);
+    }
+    const outOfFrame = (name) => {
+        console.log(name, "left the screen");
+    }
+
     return (
-        <div>
+        <div className="tinderCards">
             <div className="tinderCards_cardContainer">
                 {people.map(person => (
                     <TinderCard 
@@ -40,7 +44,7 @@ function TinderCards() {
                     preventSwipe={['up', 'down']}
                     >
                         <div 
-                            style={{ backgroundImage: `url(${person.url})` }} 
+                            style={{ backgroundImage: `url(${person.imgUrl})` }} 
                             className="card"
                         >
                             <h3>{person.name}</h3>
